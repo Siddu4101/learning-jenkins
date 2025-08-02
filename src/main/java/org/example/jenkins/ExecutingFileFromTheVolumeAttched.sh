@@ -1,0 +1,1 @@
+bash /var/jenkins_home/my-executions/fileOnVolume.sh
