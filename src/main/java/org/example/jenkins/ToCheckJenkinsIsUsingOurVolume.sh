@@ -1,1 +1,1 @@
-echo "Hello World" > /var/jenkins_home/OutPutFromJekins.txt
+echo "Hello World" > /var/jenkins_home/my-executions/OutPutFromJekins.txt
