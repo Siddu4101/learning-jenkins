@@ -1,0 +1,1 @@
+echo "Hello World" > /var/jenkins_home/OutPutFromJekins.txt
