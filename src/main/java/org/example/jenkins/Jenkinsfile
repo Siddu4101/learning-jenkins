@@ -1,0 +1,36 @@
+pipeline {
+    agent any
+    tools {
+        maven "maven-3.9.11"
+        git "Default"
+    }
+
+    stages {
+        stage('Git-clone') {
+            steps {
+                git 'https://github.com/Siddu4101/learning-jenkins.git'
+            }
+        }
+        stage("Build"){
+            steps{
+                 sh "mvn clean package"
+            }
+        }
+        stage("Test"){
+            steps{
+                 sh "mvn clean package"
+            }
+        }
+         stage("Deploy"){
+            steps{
+                 sh "java -jar target/*.jar"
+            }
+            post {
+                success {
+                    junit 'target/surefire-reports/*.xml'
+                    archiveArtifacts 'target/*.jar'
+                }
+            }
+        }
+    }
+}
